@@ -2,7 +2,8 @@
   "name": "trello",
   "version": "1.0.0",
   "scripts": {
-    "test": "wdio run src/config/wdio.conf.js"
+    "test": "wdio run src/config/wdio.conf.js",
+    "format": "prettier --write ."
   },
   "description": "",
   "devDependencies": {
