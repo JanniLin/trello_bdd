@@ -8,4 +8,4 @@ Feature: Login functionality
     And I click 'continue' button
     And I insert the password
     And I click 'submit' button
-    Then I see logo 'Trello' is displayed
+    Then logo 'Trello' is displayed

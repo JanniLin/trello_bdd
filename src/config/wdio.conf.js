@@ -3,7 +3,7 @@ exports.config = {
 
   specs: ["./../test/specs/**/*.test.js"],
 
-  specFileRetries: 2,
+  specFileRetries: 1,
 
   maxInstances: 6,
 

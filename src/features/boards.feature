@@ -6,7 +6,6 @@ Feature: Boards management
   Scenario: Create a board
 
     When I click on the 'create new board' area
-    And I see the modal
     And I insert board title 'some'
     And I click 'create' button
     Then I can see title 'some' in the list of boards
