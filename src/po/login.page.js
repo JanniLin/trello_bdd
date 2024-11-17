@@ -22,8 +22,8 @@ class LoginPage extends Page {
     return $("#login-submit");
   }
   async login() {
-    await this.open()
-    await this.btnLogin.click()
+    await this.open();
+    await this.btnLogin.click();
     await this.inputUserName.setValue("yana.rusakova.epam@gmail.com");
     await this.btnUserNameSubmit.click();
     await this.inputPassword.setValue("passworD123");

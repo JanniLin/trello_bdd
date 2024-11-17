@@ -3,13 +3,13 @@ exports.config = {
 
   specs: ["./../test/specs/**/*.test.js"],
 
-  specFileRetries: 1,
+  //specFileRetries: 1,
 
   maxInstances: 6,
 
   capabilities: [
     {
-      maxInstances: 2,
+      maxInstances: 1,
       browserName: "chrome",
       "goog:chromeOptions": {
         args: [
