@@ -14,16 +14,12 @@ class Boards_generalPage extends Page {
     return $('div[class="board-tile mod-add"]');
   }
 
-  get boardTitle() {
+  get createBoardTitle() {
     return $('input[data-testid="create-board-title-input"]');
   }
 
   get btnSubmitCreate() {
     return $('button[data-testid="create-board-submit-button"]');
-  }
-
-  get boardsList() {
-    return $("ul.boards-page-board-section-list");
   }
 
   get searchInput() {
@@ -34,8 +30,12 @@ class Boards_generalPage extends Page {
     return $("div.hQdzCqwE1c7MY1");
   }
 
-   get searchedItem(){
-    return $('a span[text="some1"]')
+  get searchedItem() {
+    return $('a span[text="some1"]');
+  }
+
+  boardFromList(ttl) {
+    return $(`div[title="${ttl}"]`);
   }
 }
 
