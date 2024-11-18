@@ -34,8 +34,8 @@ class Boards_generalPage extends Page {
     return $("div.hQdzCqwE1c7MY1");
   }
 
-  get searchedItem(){
-    return $("div.eQ9di9xFp2WSc0 div.U8nNpLQtodnSyN div.UAsfnPDUqK2ODM div.mSNpkAEcOEeSW4 div.keE3h4FdrPWUCC span.nrtdxIdBIR0LmD span[text='some']")
+   get searchedItem(){
+    return $('a span[text="some1"]')
   }
 }
 
