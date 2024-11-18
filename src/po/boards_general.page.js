@@ -30,10 +30,6 @@ class Boards_generalPage extends Page {
     return $("div.hQdzCqwE1c7MY1");
   }
 
-  get searchedItem() {
-    return $('a span[text="some1"]');
-  }
-
   boardFromList(ttl) {
     return $(`div[title="${ttl}"]`);
   }

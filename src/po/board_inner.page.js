@@ -4,6 +4,15 @@ class Board_innerPage extends Page {
   itemFromList(ttl) {
     return $(`a[title='${ttl} (активна)']`);
   }
+  get iconSettingsSideMenu(){
+    return $('span[data-testid="OverflowMenuHorizontalIcon"]')
+  }
+  get btnCloseBoard (){
+    return $('button[class="V1zfUmYP2wm_jb frrHNIWnTojsww bxgKMAm3lq5BpA SEj5vUdI3VvxDc"]')
+  }
+  get btnCloseConfirm (){
+    return $('button[data-testid="popover-close-board-confirm"]')
+  }
 
   get btnAddList() {
     return $('button[data-testid="list-composer-button"]');
@@ -28,6 +37,30 @@ class Board_innerPage extends Page {
   }
   get btnDeleteList() {
     return $('button[data-testid="list-actions-archive-list-button"]');
+  }
+  get btnAddCard() {
+    return $('button[data-testid="list-add-card-button"]');
+  }
+  get cardTextArea() {
+    return $('textarea[data-testid="list-card-composer-textarea"]');
+  }
+  get btnSubmitAddCard() {
+    return $('button[data-testid="list-card-composer-add-card-button"]');
+  }
+  get card() {
+    return $('li[data-testid="list-card"]');
+  }
+  get btnFilterCard() {
+    return $('button[data-testid="filter-popover-button"]');
+  }
+  get filterSearchInput(){
+    return $('input[class="nch-textfield__input lsOhPsHuxEMYEb lsOhPsHuxEMYEb"]')
+  }
+  get filterCount (){
+    return $('div[data-testid="filter-popover-button-filter-count"]')
+  }
+  get btnCloseNextCard() {
+    return $('button[data-testid="list-card-composer-cancel-button"]');
   }
 }
 module.exports = new Board_innerPage();

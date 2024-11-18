@@ -1,7 +1,13 @@
 exports.config = {
   runner: "local",
 
-  specs: ["./../test/specs/**/*.test.js"],
+  specs:
+  [
+    //"./../test/specs/login.test.js",
+    "./../test/specs/boards.test.js",
+   // "./../test/specs/list_cards.test.js",
+    //"./../test/specs/**/*.test.js",
+  ],
 
   //specFileRetries: 1,
 
@@ -9,7 +15,7 @@ exports.config = {
 
   capabilities: [
     {
-      maxInstances: 1,
+      maxInstances: 2,
       browserName: "chrome",
       "goog:chromeOptions": {
         args: [

@@ -2,24 +2,26 @@ const { $ } = require("@wdio/globals");
 const Page = require("./page");
 
 class LoginPage extends Page {
-  //trello
+
+  open() {
+    return super.open("home");
+  }
+
   get btnLogin() {
     return $('a[data-uuid="MJFtCCgVhXrVl7v9HA7EH_login"]');
   }
-  get modalWindow() {
-    return $("#ProductHeading");
-  }
+
   get inputUserName() {
-    return $("#username");
+    return $("input#username");
   }
   get btnUserNameSubmit() {
-    return $("#login-submit");
+    return $("button#login-submit");
   }
   get inputPassword() {
-    return $("#password");
+    return $("input#password");
   }
   get btnPasswordSubmit() {
-    return $("#login-submit");
+    return $("button#login-submit");
   }
   async login() {
     await this.open();
@@ -29,11 +31,8 @@ class LoginPage extends Page {
     await this.inputPassword.setValue("passworD123");
     await this.btnPasswordSubmit.click();
   }
-  //
 
-  open() {
-    return super.open("home");
-  }
+
 }
 
 module.exports = new LoginPage();
