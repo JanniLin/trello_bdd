@@ -2,7 +2,6 @@ const { $ } = require("@wdio/globals");
 const Page = require("./page");
 
 class LoginPage extends Page {
-
   open() {
     return super.open("home");
   }
@@ -12,16 +11,16 @@ class LoginPage extends Page {
   }
 
   get inputUserName() {
-    return $("input#username");
+    return $("#username");
   }
   get btnUserNameSubmit() {
-    return $("button#login-submit");
+    return $("#login-submit");
   }
   get inputPassword() {
-    return $("input#password");
+    return $("#password");
   }
   get btnPasswordSubmit() {
-    return $("button#login-submit");
+    return $("#login-submit");
   }
   async login() {
     await this.open();
@@ -31,8 +30,6 @@ class LoginPage extends Page {
     await this.inputPassword.setValue("passworD123");
     await this.btnPasswordSubmit.click();
   }
-
-
 }
 
 module.exports = new LoginPage();

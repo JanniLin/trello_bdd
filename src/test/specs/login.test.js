@@ -13,7 +13,7 @@ describe("Login functionality", () => {
     await LoginPage.btnPasswordSubmit.click();
   });
   it("logo 'Trello' is displayed", async () => {
-    const logo = BoardsPage.logo
-    await expect(logo).toExist()
+    const logo = BoardsPage.logo;
+    await expect(logo).toExist();
   });
 });

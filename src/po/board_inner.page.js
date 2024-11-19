@@ -4,14 +4,21 @@ class Board_innerPage extends Page {
   itemFromList(ttl) {
     return $(`a[title='${ttl} (активна)']`);
   }
-  get iconSettingsSideMenu(){
-    return $('span[data-testid="OverflowMenuHorizontalIcon"]')
+  get iconSettingsSideMenu() {
+    return;
+    $('span[data-testid="OverflowMenuHorizontalIcon"]');
   }
-  get btnCloseBoard (){
-    return $('button[class="V1zfUmYP2wm_jb frrHNIWnTojsww bxgKMAm3lq5BpA SEj5vUdI3VvxDc"]')
+  async openSettings(boardTitle) {
+    const icon = await this.itemFromList(boardTitle);
+    await icon.$('span[data-testid="OverflowMenuHorizontalIcon"]').click();
   }
-  get btnCloseConfirm (){
-    return $('button[data-testid="popover-close-board-confirm"]')
+  get btnCloseBoard() {
+    return $(
+      'button[class="V1zfUmYP2wm_jb frrHNIWnTojsww bxgKMAm3lq5BpA SEj5vUdI3VvxDc"]',
+    );
+  }
+  get btnCloseConfirm() {
+    return $('button[data-testid="popover-close-board-confirm"]');
   }
 
   get btnAddList() {
@@ -53,11 +60,13 @@ class Board_innerPage extends Page {
   get btnFilterCard() {
     return $('button[data-testid="filter-popover-button"]');
   }
-  get filterSearchInput(){
-    return $('input[class="nch-textfield__input lsOhPsHuxEMYEb lsOhPsHuxEMYEb"]')
+  get filterSearchInput() {
+    return $(
+      'input[class="nch-textfield__input lsOhPsHuxEMYEb lsOhPsHuxEMYEb"]',
+    );
   }
-  get filterCount (){
-    return $('div[data-testid="filter-popover-button-filter-count"]')
+  get filterCount() {
+    return $('div[data-testid="filter-popover-button-filter-count"]');
   }
   get btnCloseNextCard() {
     return $('button[data-testid="list-card-composer-cancel-button"]');

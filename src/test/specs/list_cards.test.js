@@ -2,9 +2,7 @@ const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const BoardInnerPage = require("../../po/board_inner.page");
 
-describe("Cards management",  () => {
-
-
+describe("Cards management", () => {
   before("Create a list", async () => {
     await LoginPage.login();
     const boardItem = await BoardsPage.boardFromList("new");
@@ -20,7 +18,7 @@ describe("Cards management",  () => {
   });
 
   before("Create a card", async () => {
-    await BoardsPage.open()
+    await BoardsPage.open();
     const boardItem = await BoardsPage.boardFromList("new");
     await boardItem.click();
     await BoardInnerPage.btnAddCard.click();
@@ -33,7 +31,7 @@ describe("Cards management",  () => {
     await expect(card).toEqual("new card");
   });
   it("Card filtering", async () => {
-    await BoardsPage.open()
+    await BoardsPage.open();
     const boardItem = await BoardsPage.boardFromList("new");
     await boardItem.click();
     await BoardInnerPage.btnAddCard.click();
@@ -41,16 +39,15 @@ describe("Cards management",  () => {
     await BoardInnerPage.btnSubmitAddCard.click();
     await BoardInnerPage.btnCloseNextCard.click();
     await BoardInnerPage.btnFilterCard.click();
-    await BoardInnerPage.filterSearchInput.setValue('second one')
-
+    await BoardInnerPage.filterSearchInput.setValue("second one");
   });
-  it('I can see number of founded cards',async ()=>{
-    const count = await BoardInnerPage.filterCount.getText()
-    await expect(count).toEqual('1')
-  })
+  it("I can see number of founded cards", async () => {
+    const count = await BoardInnerPage.filterCount.getText();
+    await expect(count).toEqual("1");
+  });
 
   after("delete list", async () => {
-     await BoardInnerPage.listSettingsIcon.click();
-     await BoardInnerPage.btnDeleteList.click();
+    await BoardInnerPage.listSettingsIcon.click();
+    await BoardInnerPage.btnDeleteList.click();
   });
 });
