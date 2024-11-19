@@ -43,7 +43,7 @@ describe("Cards management", () => {
   });
   it("I can see number of founded cards", async () => {
     const count = await BoardInnerPage.filterCount.getText();
-     expect(count).toEqual("1");
+    expect(count).toEqual("1");
   });
 
   after("delete list", async () => {

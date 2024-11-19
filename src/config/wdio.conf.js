@@ -2,10 +2,9 @@ exports.config = {
   runner: "local",
 
   specs: [
-   // "./../test/specs/login.test.js",
+    // "./../test/specs/login.test.js",
     "./../test/specs/boards.test.js",
-    //"./../test/specs/list_cards.test.js",
-    //"./../test/specs/**/*.test.js",
+    "./../test/specs/list_cards.test.js",
   ],
 
   //specFileRetries: 2,

@@ -14,6 +14,6 @@ describe("Login functionality", () => {
   });
   it("logo 'Trello' is displayed", async () => {
     const logo = BoardsPage.logo;
-     expect(logo).toExist();
+    expect(logo).toExist();
   });
 });

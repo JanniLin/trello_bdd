@@ -4,11 +4,13 @@ class Board_innerPage extends Page {
   itemFromList(ttl) {
     return $(`a[title='${ttl} (активна)']`);
   }
-  get pageTitle(){
-    return $('h1[data-testid="board-name-display"]')
+  get pageTitle() {
+    return $('h1[data-testid="board-name-display"]');
   }
   async iconSettingsSideMenu(ttl) {
-    return $(`a[title="${ttl}"] span[data-testid="OverflowMenuHorizontalIcon"]`);
+    return $(
+      `a[title="${ttl}"] span[data-testid="OverflowMenuHorizontalIcon"]`,
+    );
   }
   async openSettings(boardTitle) {
     const icon = await this.itemFromList(boardTitle);
