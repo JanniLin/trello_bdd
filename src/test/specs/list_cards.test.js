@@ -28,7 +28,7 @@ describe("Cards management", () => {
   });
   it("I can see <new_card> card in the <new_list>", async () => {
     const card = await BoardInnerPage.card.getText();
-    await expect(card).toEqual("new card");
+    expect(card).toEqual("new card");
   });
   it("Card filtering", async () => {
     await BoardsPage.open();
@@ -43,7 +43,7 @@ describe("Cards management", () => {
   });
   it("I can see number of founded cards", async () => {
     const count = await BoardInnerPage.filterCount.getText();
-    await expect(count).toEqual("1");
+     expect(count).toEqual("1");
   });
 
   after("delete list", async () => {

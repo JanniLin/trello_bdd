@@ -11,7 +11,7 @@ describe("Boards management ", async () => {
   });
   it("I can see title <new> in the list of boards", async () => {
     const boardItem = await BoardInnerPage.itemFromList("new");
-    await expect(boardItem).toBeExisting();
+    expect(boardItem).toBeExisting();
   });
 
   // it("Search for a board", async () => {

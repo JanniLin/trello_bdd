@@ -26,19 +26,7 @@ exports.config = {
       },
       acceptInsecureCerts: true,
     },
-    // {
-    //   maxInstances: 2,
-    //   browserName: "MicrosoftEdge",
-    //   "ms:edgeOptions": {
-    //     args: [
-    //       // "--headless",
-    //       "--start-maximized",
-    //       "--disable-gpu",
-    //       "--disable-dev-shm-usage",
-    //     ],
-    //   },
-    //   acceptInsecureCerts: false,
-    // },
+
     // {
     //     maxInstances: 2,
     //     browserName: "safari",
