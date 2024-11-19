@@ -5,10 +5,8 @@ exports.config = {
     // "./../test/specs/login.test.js",
     //"./../test/specs/boards.test.js",
     //"./../test/specs/list_cards.test.js",
-    "./../test/specs/user_profile_edit.js",
-    "./../test/specs/workspace_edit.js",
-
-
+    //"./../test/specs/user_profile_edit.test.js",
+    "./../test/specs/workspace_edit.test.js",
   ],
 
   //specFileRetries: 2,

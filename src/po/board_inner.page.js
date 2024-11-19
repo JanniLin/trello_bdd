@@ -12,10 +12,7 @@ class Board_innerPage extends Page {
       `a[title="${ttl}"] span[data-testid="OverflowMenuHorizontalIcon"]`,
     );
   }
-  async openSettings(boardTitle) {
-    const icon = await this.itemFromList(boardTitle);
-    await icon.$('span[data-testid="OverflowMenuHorizontalIcon"]').click();
-  }
+
   get btnCloseBoard() {
     return $(
       'button[class="V1zfUmYP2wm_jb frrHNIWnTojsww bxgKMAm3lq5BpA SEj5vUdI3VvxDc"]',

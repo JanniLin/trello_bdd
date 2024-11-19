@@ -25,6 +25,10 @@ class Boards_generalPage extends Page {
   boardFromList(ttl) {
     return $(`div[title="${ttl}"]`);
   }
+
+  get btnSettings() {
+    return $('//span[contains(text(), "Настройки")]');
+  }
 }
 
 module.exports = new Boards_generalPage();
