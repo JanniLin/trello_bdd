@@ -22,14 +22,6 @@ class Boards_generalPage extends Page {
     return $('button[data-testid="create-board-submit-button"]');
   }
 
-  get searchInput() {
-    return $('div[role="search"] input[data-test-id="search-dialog-input"]');
-  }
-
-  get searchIcon() {
-    return $("div.hQdzCqwE1c7MY1");
-  }
-
   boardFromList(ttl) {
     return $(`div[title="${ttl}"]`);
   }

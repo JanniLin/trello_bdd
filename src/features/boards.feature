@@ -13,7 +13,7 @@ Feature: Boards management
 
   Scenario: Search for a board
 
-    When I click <search> input
+    When I open 'search' page
     And I insert board title 'new'
     And I click found board 'new'
     Then I can see the title of the board 'new'

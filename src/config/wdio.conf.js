@@ -3,14 +3,14 @@ exports.config = {
 
   specs: [
    // "./../test/specs/login.test.js",
-    //"./../test/specs/boards.test.js",
-    "./../test/specs/list_cards.test.js",
+    "./../test/specs/boards.test.js",
+    //"./../test/specs/list_cards.test.js",
     //"./../test/specs/**/*.test.js",
   ],
 
   //specFileRetries: 2,
 
-  maxInstances: 6,
+  maxInstances: 10,
 
   capabilities: [
     {
@@ -26,6 +26,16 @@ exports.config = {
       },
       acceptInsecureCerts: true,
     },
+    // {
+    //   maxInstances: 2,
+    //   browserName: "firefox",
+    //   "moz:firefoxOptions": {
+    //     args: [
+    //       //"--headless",
+    //     ],
+    //   },
+    //   acceptInsecureCerts: true,
+    // },
 
     // {
     //     maxInstances: 2,
