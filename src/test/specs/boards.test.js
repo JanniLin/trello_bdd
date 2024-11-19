@@ -2,7 +2,7 @@ const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const BoardInnerPage = require("../../po/board_inner.page");
 
-describe("Boards management ", async () => {
+describe("Boards management ",  () => {
   before("Create a board", async () => {
     await LoginPage.login();
     await BoardsPage.createNewBoard.click();
