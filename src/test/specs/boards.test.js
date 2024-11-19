@@ -2,7 +2,6 @@ const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const SearchPage = require("../../po/search.page");
 const BoardInnerPage = require("../../po/board_inner.page");
-const { $ } = require("@wdio/globals");
 
 describe("Boards management ", () => {
   before("Create a board", async () => {
@@ -24,7 +23,7 @@ describe("Boards management ", () => {
   });
   it("I can see the title of the board <some>", async () => {
     const title = await BoardInnerPage.pageTitle.getText();
-    await expect(title).toEqual("new");
+    expect(title).toEqual("new");
   });
   // after("Board deletion", async () => {
   //   await BoardInnerPage.itemFromList("new").moveTo();
