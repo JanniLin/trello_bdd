@@ -14,7 +14,7 @@ describe("Workspace management", () => {
   });
   it("I can see 'public' appeared in workspace visibility", async () => {
     const visibility = await SettingsPage.visibility.getText();
-    await expect(visibility).toMatch(/(Public|Публичная)/i);
+    expect(visibility).toMatch(/(Public|Публичная)/i);
   });
   after("visibility back to private", async () => {
     await SettingsPage.btnWorkspaceVisibility.click();
