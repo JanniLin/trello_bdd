@@ -5,7 +5,13 @@ class SettingsPage extends Page {
     return $('button[data-testid="workspace-settings-visibility-button"]');
   }
   get publicOption() {
-    return $('div[class="wfj__FaUUGQGeV"]');
+    return $('span[data-testid="visibility-name-public"]');
+  }
+  get privateOption (){
+    return $('span[data-testid="visibility-name-private"]')
+  }
+  get btnClosePopover(){
+    return $('button[data-testid="popover-close"]')
   }
   get visibility() {
     return $('p[data-testid="ws-visibility-details"]');
