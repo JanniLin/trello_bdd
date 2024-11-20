@@ -7,11 +7,11 @@ class SettingsPage extends Page {
   get publicOption() {
     return $('span[data-testid="visibility-name-public"]');
   }
-  get privateOption (){
-    return $('span[data-testid="visibility-name-private"]')
+  get privateOption() {
+    return $('span[data-testid="visibility-name-private"]');
   }
-  get btnClosePopover(){
-    return $('button[data-testid="popover-close"]')
+  get btnClosePopover() {
+    return $('button[data-testid="popover-close"]');
   }
   get visibility() {
     return $('p[data-testid="ws-visibility-details"]');
