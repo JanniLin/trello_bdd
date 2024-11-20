@@ -27,7 +27,17 @@ class Boards_generalPage extends Page {
   }
 
   get btnSettings() {
-    return $('//span[contains(text(), "Настройки")]');
+    return $(
+      '//span[contains(text(), "Настройки") or contains(text(), "Settings")]',
+    );
+  }
+  get accountIcon() {
+    return $('button[data-testid="header-member-menu-button"]');
+  }
+  get manageAccount() {
+    return $(
+      '//span[contains(text(), "Manage account") or contains(text(), "Управление аккаунтом")]',
+    );
   }
 }
 

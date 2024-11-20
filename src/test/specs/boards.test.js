@@ -9,7 +9,6 @@ describe("Boards management ", () => {
     await BoardsPage.createNewBoard.click();
     await BoardsPage.createBoardTitle.setValue("new");
     await BoardsPage.btnSubmitCreate.click();
-    await BoardInnerPage.btnCloseNextList.click();
   });
   it("I can see title <new> in the list of boards", async () => {
     const boardItem = await BoardInnerPage.itemFromList("new");

@@ -1,6 +1,6 @@
 const Page = require("./page");
 
-class SettingsPage extends Page {
+class Settings_workspacePage extends Page {
   get btnWorkspaceVisibility() {
     return $('button[data-testid="workspace-settings-visibility-button"]');
   }
@@ -17,4 +17,4 @@ class SettingsPage extends Page {
     return $('p[data-testid="ws-visibility-details"]');
   }
 }
-module.exports = new SettingsPage();
+module.exports = new Settings_workspacePage();

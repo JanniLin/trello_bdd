@@ -2,16 +2,18 @@ exports.config = {
   runner: "local",
 
   specs: [
-    //"./../test/specs/login.test.js",
-    // "./../test/specs/boards.test.js",
-    // "./../test/specs/list_cards.test.js",
-    "./../test/specs/user_profile_edit.test.js",
+    //"./../test/specs/**/*.test.js",
+
+    "./../test/specs/login.test.js",
+    //"./../test/specs/boards.test.js",
+    "./../test/specs/list_cards.test.js",
+    //"./../test/specs/user_profile_edit.test.js",
     //"./../test/specs/workspace_edit.test.js",
   ],
 
   //specFileRetries: 2,
 
-  maxInstances: 10,
+  maxInstances: 2,
 
   capabilities: [
     // {
@@ -31,7 +33,9 @@ exports.config = {
       maxInstances: 2,
       browserName: "firefox",
       "moz:firefoxOptions": {
-        args: ["--headless"],
+        args: [
+          //"--headless"
+        ],
       },
       acceptInsecureCerts: true,
     },
@@ -47,8 +51,6 @@ exports.config = {
   logLevel: "warn",
 
   bail: 0,
-
-  // baseUrl: 'http://localhost:8080',
 
   waitforTimeout: 10000,
 
