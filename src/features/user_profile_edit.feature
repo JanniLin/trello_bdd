@@ -4,9 +4,7 @@ Feature: User profile management
 
     Given I login with valid credentials
     When I click 'account' icon
-    And I click 'manage account'
-    And I click 'your job title' item
-    And I insert 'trainee AQA'
-    And I click 'your organization' item
-    And I insert 'EPAM'
-    Then I see 'trainee AQA' and 'EPAM' is displayed
+    And I click 'Profile and visibility'
+    And I change username with 'yana_rusakova'
+    And I click save button
+    Then I see page url is changed

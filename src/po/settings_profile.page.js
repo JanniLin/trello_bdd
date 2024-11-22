@@ -1,15 +1,15 @@
-const { $ } = require("@wdio/globals");
+const {$} = require("@wdio/globals");
 const Page = require("./page");
 
 class Settings_profilePage extends Page {
-  get name() {
-    return $(
-      'div[data-test-selector="field-edit-full-name"] div.css-1v0cd8t div[data-test-selector="profile-about-item-read-view"]',
-    );
+  get userNameInput() {
+    return $("#username");
   }
 
-  get jobTitle() {
-    return $('div[data-test-selector="field-wrapper-job-title"]');
+  get btnSave() {
+    return $('button[type="submit"]');
   }
+
 }
+
 module.exports = new Settings_profilePage();
