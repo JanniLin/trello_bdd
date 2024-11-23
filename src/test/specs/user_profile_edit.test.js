@@ -13,7 +13,7 @@ describe("User profile management", () => {
   });
   it("I see page url is changed", async () => {
     const url = await browser.getUrl();
-    await expect(url).toEqual("https://trello.com/u/yana_rusakova");
+    expect(url).toEqual("https://trello.com/u/yana_rusakova");
   });
   after("change username", async () => {
     await SettingsProfile.userNameInput.setValue("yana13460131");
