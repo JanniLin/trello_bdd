@@ -1,4 +1,4 @@
-const {$} = require("@wdio/globals");
+const { $ } = require("@wdio/globals");
 const Page = require("./page");
 
 class Settings_profilePage extends Page {
@@ -9,7 +9,6 @@ class Settings_profilePage extends Page {
   get btnSave() {
     return $('button[type="submit"]');
   }
-
 }
 
 module.exports = new Settings_profilePage();

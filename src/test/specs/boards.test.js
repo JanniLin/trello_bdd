@@ -11,8 +11,8 @@ describe("Boards management ", () => {
     await BoardsPage.btnSubmitCreate.click();
   });
   it("I can see title <new> in the list of boards", async () => {
-    const boardItem = await BoardInnerPage.itemFromList.getText()
-    expect(boardItem).toEqual('new')
+    const boardItem = await BoardInnerPage.itemFromList("new").getText();
+    expect(boardItem).toEqual("new");
   });
 
   before("Search for a board", async () => {
@@ -24,10 +24,11 @@ describe("Boards management ", () => {
     const title = await BoardInnerPage.pageTitle.getText();
     expect(title).toEqual("new");
   });
-  // after("Board deletion", async () => {
-  //   await BoardInnerPage.itemFromList("new").moveTo();
-  //   const icon = await BoardInnerPage.iconSettingsSideMenu('new')
-  //   await icon.click()
-  //
-  // });
+  after("Board deletion", async () => {
+    await BoardInnerPage.itemFromList("new").moveTo();
+    await BoardInnerPage.iconSettingsSideMenu.moveTo();
+    await BoardInnerPage.iconSettingsSideMenu.click();
+    await BoardInnerPage.btnCloseBoard.click();
+    await BoardInnerPage.btnCloseConfirm.click();
+  });
 });

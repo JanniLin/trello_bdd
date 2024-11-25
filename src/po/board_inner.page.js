@@ -1,24 +1,22 @@
 import Page from "./page";
 
 class Board_innerPage extends Page {
-  get itemFromList() {
-    return $('a[title="new (currently active)"]');
+  itemFromList(ttl) {
+    return $(`a[title="${ttl} (currently active)"]`);
   }
 
   get pageTitle() {
     return $('h1[data-testid="board-name-display"]');
   }
 
-  async iconSettingsSideMenu(ttl) {
+  get iconSettingsSideMenu() {
     return $(
-      `a[title="${ttl}"] span[data-testid="OverflowMenuHorizontalIcon"]`,
+      'button[aria-label="Board actions menu"] span[data-testid="OverflowMenuHorizontalIcon"] ',
     );
   }
 
   get btnCloseBoard() {
-    return $(
-      'button[class="V1zfUmYP2wm_jb frrHNIWnTojsww bxgKMAm3lq5BpA SEj5vUdI3VvxDc"]',
-    );
+    return $('button[aria-label="Close board"]');
   }
 
   get btnCloseConfirm() {
