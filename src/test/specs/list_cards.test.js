@@ -1,6 +1,10 @@
 const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const BoardInnerPage = require("../../po/board_inner.page");
+const chai = require("chai");
+const assert = chai.assert;
+const expect = chai.expect;
+chai.should();
 
 describe("Cards management", () => {
   before("Create a list", async () => {
@@ -14,7 +18,8 @@ describe("Cards management", () => {
   });
   it("I can see <new_list> on the <new> board page", async () => {
     const list = await BoardInnerPage.list.getText();
-    await expect(list).toEqual("new list");
+
+    expect(list).to.be.a("string").and.to.equal("new list");
   });
 
   before("Create a card", async () => {
@@ -28,7 +33,8 @@ describe("Cards management", () => {
   });
   it("I can see <new_card> card in the <new_list>", async () => {
     const card = await BoardInnerPage.card.getText();
-    expect(card).toEqual("new card");
+
+    card.should.be.a("string").and.equal("new card");
   });
   it("Card filtering", async () => {
     await BoardsPage.open();
@@ -43,7 +49,8 @@ describe("Cards management", () => {
   });
   it("I can see number of founded cards", async () => {
     const count = await BoardInnerPage.filterCount.getText();
-    expect(count).toEqual("1");
+
+    assert.equal(count, "1", "The number of found cards should be '1'");
   });
 
   after("delete list", async () => {

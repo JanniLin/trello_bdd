@@ -15,6 +15,7 @@
     "wdio-geckodriver-service": "^5.0.2"
   },
   "dependencies": {
-    "@wdio/globals": "^9.2.14"
+    "@wdio/globals": "^9.2.14",
+    "chai": "^5.1.2"
   }
 }

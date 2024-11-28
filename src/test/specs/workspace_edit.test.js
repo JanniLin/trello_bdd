@@ -1,6 +1,8 @@
 const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const SettingsPage = require("../../po/settings_workspace.page");
+const chai = require("chai");
+const assert = chai.assert;
 
 describe("Workspace management", () => {
   before("Edit Workspace", async () => {
@@ -14,7 +16,12 @@ describe("Workspace management", () => {
   });
   it("I can see 'public' appeared in workspace visibility", async () => {
     const visibility = await SettingsPage.visibility.getText();
-    expect(visibility).toMatch(/(Public|Публичная)/i);
+
+    assert.match(
+      visibility,
+      /(Public|Публичная)/i,
+      "The visibility should be set to 'Public'",
+    );
   });
   after("visibility back to private", async () => {
     await SettingsPage.btnWorkspaceVisibility.click();

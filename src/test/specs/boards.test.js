@@ -2,6 +2,9 @@ const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const SearchPage = require("../../po/search.page");
 const BoardInnerPage = require("../../po/board_inner.page");
+const chai = require("chai");
+const assert = chai.assert;
+chai.should();
 
 describe("Boards management ", () => {
   before("Create a board", async () => {
@@ -12,7 +15,8 @@ describe("Boards management ", () => {
   });
   it("I can see title <new> in the list of boards", async () => {
     const boardItem = await BoardInnerPage.itemFromList("new").getText();
-    expect(boardItem).toEqual("new");
+
+    assert.equal(boardItem, "new", "The board title should be 'new'");
   });
 
   before("Search for a board", async () => {
@@ -22,7 +26,8 @@ describe("Boards management ", () => {
   });
   it("I can see the title of the board <some>", async () => {
     const title = await BoardInnerPage.pageTitle.getText();
-    expect(title).toEqual("new");
+
+    title.should.be.a("string").and.equal("new");
   });
   after("Board deletion", async () => {
     await BoardInnerPage.itemFromList("new").moveTo();

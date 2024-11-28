@@ -1,6 +1,8 @@
 const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const SettingsProfile = require("../../po/settings_profile.page");
+const chai = require("chai");
+chai.should();
 
 describe("User profile management", () => {
   before("Edit user profile", async () => {
@@ -13,7 +15,8 @@ describe("User profile management", () => {
   });
   it("I see page url is changed", async () => {
     const url = await browser.getUrl();
-    expect(url).toEqual("https://trello.com/u/yana_rusakova");
+
+    url.should.be.a("string").and.equal("https://trello.com/u/yana_rusakova");
   });
   after("change username", async () => {
     await SettingsProfile.userNameInput.setValue("yana13460131");

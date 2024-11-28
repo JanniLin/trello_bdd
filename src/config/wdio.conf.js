@@ -4,14 +4,14 @@ exports.config = {
   specs: [
     //"./../test/specs/**/*.test.js",
 
-    // "./../test/specs/login.test.js",
-    "./../test/specs/boards.test.js",
+    //"./../test/specs/login.test.js",
+    //"./../test/specs/boards.test.js",
     //"./../test/specs/list_cards.test.js",
-    // "./../test/specs/user_profile_edit.test.js",
-    // "./../test/specs/workspace_edit.test.js",
+    "./../test/specs/user_profile_edit.test.js",
+    "./../test/specs/workspace_edit.test.js",
   ],
 
-  //specFileRetries: 2,
+  specFileRetries: 2,
 
   maxInstances: 2,
 
@@ -33,9 +33,7 @@ exports.config = {
       maxInstances: 2,
       browserName: "firefox",
       "moz:firefoxOptions": {
-        args: [
-          //"--headless"
-        ],
+        args: ["--headless"],
       },
       acceptInsecureCerts: true,
     },
