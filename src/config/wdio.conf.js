@@ -2,13 +2,13 @@ exports.config = {
   runner: "local",
 
   specs: [
-    //"./../test/specs/**/*.test.js",
+    "./../test/specs/**/*.test.js",
 
     //"./../test/specs/login.test.js",
     //"./../test/specs/boards.test.js",
     //"./../test/specs/list_cards.test.js",
-    "./../test/specs/user_profile_edit.test.js",
-    "./../test/specs/workspace_edit.test.js",
+    //"./../test/specs/user_profile_edit.test.js",
+    //"./../test/specs/workspace_edit.test.js",
   ],
 
   specFileRetries: 2,
@@ -16,19 +16,19 @@ exports.config = {
   maxInstances: 2,
 
   capabilities: [
-    // {
-    //   maxInstances: 2,
-    //   browserName: "chrome",
-    //   "goog:chromeOptions": {
-    //     args: [
-    //       //"--headless",
-    //       "--start-maximized",
-    //       "--disable-gpu",
-    //       "--disable-dev-shm-usage",
-    //     ],
-    //   },
-    //   acceptInsecureCerts: true,
-    // },
+    {
+      maxInstances: 2,
+      browserName: "chrome",
+      "goog:chromeOptions": {
+        args: [
+          // "--headless",
+          "--start-maximized",
+          "--disable-gpu",
+          "--disable-dev-shm-usage",
+        ],
+      },
+      acceptInsecureCerts: true,
+    },
     {
       maxInstances: 2,
       browserName: "firefox",
@@ -39,9 +39,9 @@ exports.config = {
     },
 
     // {
-    //     maxInstances: 2,
-    //     browserName: "safari",
-    //     acceptInsecureCerts: true,
+    //   maxInstances: 2,
+    //   browserName: "safari",
+    //   acceptInsecureCerts: true,
     // }
   ],
 

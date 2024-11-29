@@ -13,15 +13,19 @@ class LoginPage extends Page {
   get inputUserName() {
     return $("#username");
   }
+
   get btnUserNameSubmit() {
     return $("#login-submit");
   }
+
   get inputPassword() {
     return $("#password");
   }
+
   get btnPasswordSubmit() {
     return $("#login-submit");
   }
+
   async login() {
     await this.open();
     await this.btnLogin.click();

@@ -9,9 +9,11 @@ chai.should();
 describe("Cards management", () => {
   before("Create a list", async () => {
     await LoginPage.login();
+    await browser.pause(3000);
     const boardItem = await BoardsPage.boardFromList("new");
     await boardItem.click();
     await BoardInnerPage.btnAddList.click();
+    await BoardInnerPage.addListTitle.clearValue();
     await BoardInnerPage.addListTitle.setValue("new list");
     await BoardInnerPage.btnSubmitAddList.click();
     await BoardInnerPage.btnCloseNextList.click();
