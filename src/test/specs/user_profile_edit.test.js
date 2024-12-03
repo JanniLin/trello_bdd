@@ -1,8 +1,6 @@
 const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const SettingsProfile = require("../../po/settings_profile.page");
-const chai = require("chai");
-chai.should();
 
 describe("User profile management", () => {
   before("Edit user profile", async () => {

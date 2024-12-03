@@ -1,10 +1,6 @@
 const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const BoardInnerPage = require("../../po/board_inner.page");
-const chai = require("chai");
-const assert = chai.assert;
-const expect = chai.expect;
-chai.should();
 
 describe("Cards management", () => {
   before("Create a list", async () => {

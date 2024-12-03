@@ -37,12 +37,6 @@ exports.config = {
       },
       acceptInsecureCerts: true,
     },
-
-    // {
-    //   maxInstances: 2,
-    //   browserName: "safari",
-    //   acceptInsecureCerts: true,
-    // }
   ],
 
   // Level of logging verbosity: trace | debug | info | warn | error | silent
@@ -61,5 +55,11 @@ exports.config = {
   mochaOpts: {
     ui: "bdd",
     timeout: 60000,
+  },
+  before: async () => {
+    const chai = await import("chai");
+    global.expect = chai.expect;
+    global.assert = chai.assert;
+    chai.should();
   },
 };

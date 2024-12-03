@@ -1,7 +1,5 @@
 const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
-const chai = require("chai");
-const expect = chai.expect;
 
 describe("Login functionality", () => {
   before("Login with valid credentials", async () => {

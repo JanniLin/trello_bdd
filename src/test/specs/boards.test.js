@@ -2,9 +2,6 @@ const LoginPage = require("../../po/login.page");
 const BoardsPage = require("../../po/boards_general.page");
 const SearchPage = require("../../po/search.page");
 const BoardInnerPage = require("../../po/board_inner.page");
-const chai = require("chai");
-const assert = chai.assert;
-chai.should();
 
 describe("Boards management ", () => {
   before("Create a board", async () => {
