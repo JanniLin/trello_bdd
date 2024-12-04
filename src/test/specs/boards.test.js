@@ -1,7 +1,7 @@
-const LoginPage = require("../../po/login.page");
-const BoardsPage = require("../../po/boards_general.page");
-const SearchPage = require("../../po/search.page");
-const BoardInnerPage = require("../../po/board_inner.page");
+const LoginPage = require("../../po/pages/login.page");
+const BoardsPage = require("../../po/pages/boards_general.page");
+const SearchPage = require("../../po/pages/search.page");
+const BoardInnerPage = require("../../po/pages/board_inner.page");
 
 describe("Boards management ", () => {
   before("Create a board", async () => {

@@ -1,6 +1,6 @@
-const LoginPage = require("../../po/login.page");
-const BoardsPage = require("../../po/boards_general.page");
-const SettingsPage = require("../../po/settings_workspace.page");
+const LoginPage = require("../../po/pages/login.page");
+const BoardsPage = require("../../po/pages/boards_general.page");
+const SettingsPage = require("../../po/pages/settings_workspace.page");
 
 describe("Workspace management", () => {
   before("Edit Workspace", async () => {
