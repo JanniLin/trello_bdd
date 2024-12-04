@@ -1,4 +1,5 @@
 exports.config = {
+
   runner: "local",
 
   specs: [
