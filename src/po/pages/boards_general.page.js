@@ -1,11 +1,13 @@
 const { $ } = require("@wdio/globals");
 const Page = require("./page");
 const BoardModal = require("./../components/board/BoardModalCreateComponent");
+const ProfileManage = require("./../components/profile/ProfileManageComponent");
 
 class Boards_generalPage extends Page {
   constructor() {
     super();
     this.boardModal = new BoardModal();
+    this.profile = new ProfileManage();
   }
   open() {
     return super.open("u/yana13460131/boards");
@@ -15,8 +17,6 @@ class Boards_generalPage extends Page {
     return $("div.qsCZSrobO7JoSv");
   }
 
-
-
   boardFromList(ttl) {
     return $(`div[title="${ttl}"]`);
   }
@@ -25,14 +25,6 @@ class Boards_generalPage extends Page {
     return $(
       '//span[contains(text(), "Настройки") or contains(text(), "Settings")]',
     );
-  }
-
-  get accountIcon() {
-    return $('button[data-testid="header-member-menu-button"]');
-  }
-
-  get manageAccount() {
-    return $('a[data-testid="account-menu-profile"]');
   }
 }
 

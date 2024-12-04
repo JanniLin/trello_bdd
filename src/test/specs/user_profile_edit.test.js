@@ -5,8 +5,8 @@ const SettingsProfile = require("../../po/pages/settings_profile.page");
 describe("User profile management", () => {
   before("Edit user profile", async () => {
     await LoginPage.login();
-    await BoardsPage.accountIcon.click();
-    await BoardsPage.manageAccount.click();
+    await BoardsPage.profile.accountIcon.click();
+    await BoardsPage.profile.manageAccount.click();
     await SettingsProfile.userNameInput.setValue("yana_rusakova");
     await SettingsProfile.btnSave.click();
     await browser.pause(3000);

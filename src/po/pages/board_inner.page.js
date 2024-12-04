@@ -1,10 +1,12 @@
 import Page from "./page";
 const SideMenu = require("./../components/board/SideMenuBoardComponent");
+const List = require("./../components/list/ListComponent");
 
 class Board_innerPage extends Page {
   constructor() {
     super();
     this.sideMenu = new SideMenu();
+    this.list = new List();
   }
   itemFromList(ttl) {
     return $(`a[title="${ttl} (currently active)"]`);

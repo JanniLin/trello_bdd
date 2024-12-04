@@ -1,6 +1,6 @@
 const LoginPage = require("../../po/pages/login.page");
 const BoardsPage = require("../../po/pages/boards_general.page");
-const BoardInnerPage = require("../../po/pages/board_inner.page");
+const BoardInnerPage = require('./../../po/pages/board_inner.page')
 
 describe("Cards management", () => {
   before("Create a list", async () => {
