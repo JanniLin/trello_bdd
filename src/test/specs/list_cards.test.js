@@ -15,7 +15,7 @@ describe("Cards management", () => {
     await BoardInnerPage.btnCloseNextList.click();
   });
   it("I can see <new_list> on the <new> board page", async () => {
-    const list = await BoardInnerPage.list.getText();
+    const list = await BoardInnerPage.listEl.getText();
 
     expect(list).to.be.a("string").and.to.equal("new list");
   });

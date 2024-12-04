@@ -1,7 +1,12 @@
 const { $ } = require("@wdio/globals");
 const Page = require("./page");
+const BoardModal = require("./../components/board/BoardModalCreateComponent");
 
 class Boards_generalPage extends Page {
+  constructor() {
+    super();
+    this.boardModal = new BoardModal();
+  }
   open() {
     return super.open("u/yana13460131/boards");
   }
@@ -10,17 +15,7 @@ class Boards_generalPage extends Page {
     return $("div.qsCZSrobO7JoSv");
   }
 
-  get createNewBoard() {
-    return $('div[class="board-tile mod-add"]');
-  }
 
-  get createBoardTitle() {
-    return $('input[data-testid="create-board-title-input"]');
-  }
-
-  get btnSubmitCreate() {
-    return $('button[data-testid="create-board-submit-button"]');
-  }
 
   boardFromList(ttl) {
     return $(`div[title="${ttl}"]`);

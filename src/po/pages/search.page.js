@@ -1,16 +1,13 @@
 const Page = require("./page");
+const BoardSearch = require("../components/board/SearchDropDownComponent");
 
 class SearchPage extends Page {
+  constructor() {
+    super();
+    this.boardSearch = new BoardSearch();
+  }
   open() {
     return super.open("search");
-  }
-  get searchInput() {
-    return $('input[data-testid="advanced-search-input"]');
-  }
-  get boardFromDDList() {
-    return $(
-      'div[class="U8nNpLQtodnSyN"] a[data-testid="advanced-search-board-result-item"]',
-    );
   }
 }
 

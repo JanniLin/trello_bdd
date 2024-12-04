@@ -1,6 +1,11 @@
 import Page from "./page";
+const SideMenu = require("./../components/board/SideMenuBoardComponent");
 
 class Board_innerPage extends Page {
+  constructor() {
+    super();
+    this.sideMenu = new SideMenu();
+  }
   itemFromList(ttl) {
     return $(`a[title="${ttl} (currently active)"]`);
   }
@@ -8,19 +13,12 @@ class Board_innerPage extends Page {
   get pageTitle() {
     return $('h1[data-testid="board-name-display"]');
   }
-
-  get iconSettingsSideMenu() {
-    return $(
-      'button[aria-label="Board actions menu"] span[data-testid="OverflowMenuHorizontalIcon"] ',
-    );
-  }
-
-  get btnCloseBoard() {
-    return $('button[aria-label="Close board"]');
-  }
-
-  get btnCloseConfirm() {
-    return $('button[data-testid="popover-close-board-confirm"]');
+  async deleteBoard(board_title) {
+    await this.itemFromList(`${board_title}`).moveTo();
+    await this.sideMenu.iconSettingsSideMenu.moveTo();
+    await this.sideMenu.iconSettingsSideMenu.click();
+    await this.sideMenu.btnCloseBoard.click();
+    await this.sideMenu.btnCloseConfirm.click();
   }
 
   get btnAddList() {
@@ -35,7 +33,7 @@ class Board_innerPage extends Page {
     return $('button[data-testid="list-composer-add-list-button"]');
   }
 
-  get list() {
+  get listEl() {
     return $('div h2[data-testid="list-name"]');
   }
 

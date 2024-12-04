@@ -6,7 +6,9 @@ describe("Login functionality", () => {
     await LoginPage.open();
     await LoginPage.btnLogin.click();
 
-    await LoginPage.loginModal.userName.setValue("yana.rusakova.epam@gmail.com");
+    await LoginPage.loginModal.userName.setValue(
+      "yana.rusakova.epam@gmail.com",
+    );
     await LoginPage.loginModal.btnSubmit.click();
 
     await LoginPage.loginModal.password.setValue("passworD123");

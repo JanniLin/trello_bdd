@@ -6,9 +6,9 @@ const BoardInnerPage = require("../../po/pages/board_inner.page");
 describe("Boards management ", () => {
   before("Create a board", async () => {
     await LoginPage.login();
-    await BoardsPage.createNewBoard.click();
-    await BoardsPage.createBoardTitle.setValue("new");
-    await BoardsPage.btnSubmitCreate.click();
+    await BoardsPage.boardModal.createBoard.click();
+    await BoardsPage.boardModal.boardTitle.setValue("new");
+    await BoardsPage.boardModal.btnSubmit.click();
   });
   it("I can see title <new> in the list of boards", async () => {
     const boardItem = await BoardInnerPage.itemFromList("new").getText();
@@ -18,8 +18,8 @@ describe("Boards management ", () => {
 
   before("Search for a board", async () => {
     await SearchPage.open();
-    await SearchPage.searchInput.setValue("new");
-    await SearchPage.boardFromDDList.click();
+    await SearchPage.boardSearch.searchInput.setValue("new");
+    await SearchPage.boardSearch.boardFromList.click();
   });
   it("I can see the title of the board <some>", async () => {
     const title = await BoardInnerPage.pageTitle.getText();
@@ -27,10 +27,6 @@ describe("Boards management ", () => {
     title.should.be.a("string").and.equal("new");
   });
   after("Board deletion", async () => {
-    await BoardInnerPage.itemFromList("new").moveTo();
-    await BoardInnerPage.iconSettingsSideMenu.moveTo();
-    await BoardInnerPage.iconSettingsSideMenu.click();
-    await BoardInnerPage.btnCloseBoard.click();
-    await BoardInnerPage.btnCloseConfirm.click();
+    await BoardInnerPage.deleteBoard("new");
   });
 });
