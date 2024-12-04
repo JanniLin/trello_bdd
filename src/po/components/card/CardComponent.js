@@ -1,4 +1,4 @@
-const {$} = require("@wdio/globals");
+const { $ } = require("@wdio/globals");
 module.exports = class CardComponent {
   get btnAddCard() {
     return $('button[data-testid="list-add-card-button"]');
@@ -28,4 +28,4 @@ module.exports = class CardComponent {
   get btnCloseNextCard() {
     return $('button[data-testid="list-card-composer-cancel-button"]');
   }
-}
+};

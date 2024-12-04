@@ -23,6 +23,7 @@ describe("Cards management", () => {
     await BoardsPage.open();
     const boardItem = await BoardsPage.boardFromList("new");
     await boardItem.click();
+    await browser.pause(3000);
     await BoardInnerPage.card.btnAddCard.click();
     await BoardInnerPage.card.cardTextArea.setValue("new card");
     await BoardInnerPage.card.btnSubmitAddCard.click();
@@ -37,6 +38,7 @@ describe("Cards management", () => {
     await BoardsPage.open();
     const boardItem = await BoardsPage.boardFromList("new");
     await boardItem.click();
+    await browser.pause(3000);
     await BoardInnerPage.card.btnAddCard.click();
     await BoardInnerPage.card.cardTextArea.setValue("second one");
     await BoardInnerPage.card.btnSubmitAddCard.click();
@@ -52,6 +54,7 @@ describe("Cards management", () => {
 
   after("delete list", async () => {
     await BoardInnerPage.list.listSettingsIcon.click();
+    await browser.pause(2000);
     await BoardInnerPage.list.btnDeleteList.click();
   });
 });

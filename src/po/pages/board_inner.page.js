@@ -2,14 +2,14 @@ const { $ } = require("@wdio/globals");
 import Page from "./page";
 const SideMenu = require("./../components/board/SideMenuBoardComponent");
 const List = require("./../components/list/ListComponent");
-const Card = require('./../components/card/CardComponent')
+const Card = require("./../components/card/CardComponent");
 
 class Board_innerPage extends Page {
   constructor() {
     super();
     this.sideMenu = new SideMenu();
     this.list = new List();
-    this.card = new Card()
+    this.card = new Card();
   }
 
   itemFromList(ttl) {
@@ -27,17 +27,9 @@ class Board_innerPage extends Page {
     await this.sideMenu.btnCloseConfirm.click();
   }
 
-
-
-
-
-
-
   get filterCount() {
     return $('div[data-testid="filter-popover-button-filter-count"]');
   }
-
-
 }
 
 module.exports = new Board_innerPage();

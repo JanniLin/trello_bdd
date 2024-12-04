@@ -1,4 +1,4 @@
-const {$} = require("@wdio/globals");
+const { $ } = require("@wdio/globals");
 module.exports = class List {
   get btnAddList() {
     return $('button[data-testid="list-composer-button"]');
