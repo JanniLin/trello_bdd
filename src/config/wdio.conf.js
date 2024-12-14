@@ -1,5 +1,6 @@
 exports.config = {
   runner: "local",
+  baseUrl: "https://trello.com",
 
   specs: [
     "./../test/specs/**/*.test.js",

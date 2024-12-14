@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 module.exports = class List {
   get btnAddList() {
     return $('button[data-testid="list-composer-button"]');
@@ -11,11 +10,11 @@ module.exports = class List {
     return $('button[data-testid="list-composer-add-list-button"]');
   }
 
-  get listEl() {
+  get listTitle() {
     return $('div h2[data-testid="list-name"]');
   }
 
-  get btnCloseNextList() {
+  get btnCancelListCreation() {
     return $('button[data-testid="list-composer-cancel-button"]');
   }
 

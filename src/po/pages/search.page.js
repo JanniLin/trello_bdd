@@ -7,7 +7,7 @@ class SearchPage extends Page {
     this.boardSearch = new BoardSearch();
   }
   open() {
-    return super.open("search");
+    return super.open("/search");
   }
 }
 

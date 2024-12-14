@@ -1,14 +1,12 @@
-const LoginPage = require("../../po/pages/login.page");
-const BoardsPage = require("../../po/pages/boards_general.page");
-const SettingsProfile = require("../../po/pages/settings_profile.page");
+const pages = require("../../po/pagefactory");
 
 describe("User profile management", () => {
   before("Edit user profile", async () => {
-    await LoginPage.login();
-    await BoardsPage.profile.accountIcon.click();
-    await BoardsPage.profile.manageAccount.click();
-    await SettingsProfile.userNameInput.setValue("yana_rusakova");
-    await SettingsProfile.btnSave.click();
+    await pages.login.login();
+    await pages.boards.profile.accountIcon.click();
+    await pages.boards.profile.manageAccount.click();
+    await pages.settingsProfile.userNameInput.setValue("yana_rusakova");
+    await pages.settingsProfile.btnSave.click();
     await browser.pause(3000);
   });
   it("I see page url is changed", async () => {
@@ -17,7 +15,7 @@ describe("User profile management", () => {
     url.should.be.a("string").and.equal("https://trello.com/u/yana_rusakova");
   });
   after("change username", async () => {
-    await SettingsProfile.userNameInput.setValue("yana13460131");
-    await SettingsProfile.btnSave.click();
+    await pages.settingsProfile.userNameInput.setValue("yana13460131");
+    await pages.settingsProfile.btnSave.click();
   });
 });

@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 const Page = require("./page");
 
 class Settings_profilePage extends Page {

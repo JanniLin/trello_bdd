@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 const Page = require("./page");
 const BoardModal = require("./../components/board/BoardModalCreateComponent");
 const ProfileManage = require("./../components/profile/ProfileManageComponent");

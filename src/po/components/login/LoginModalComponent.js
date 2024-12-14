@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 module.exports = class LoginModalComponent {
   get userName() {
     return $("#username");

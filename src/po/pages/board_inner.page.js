@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 import Page from "./page";
 const SideMenu = require("./../components/board/SideMenuBoardComponent");
 const List = require("./../components/list/ListComponent");

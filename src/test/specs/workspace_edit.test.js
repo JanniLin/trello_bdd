@@ -1,19 +1,17 @@
-const LoginPage = require("../../po/pages/login.page");
-const BoardsPage = require("../../po/pages/boards_general.page");
-const SettingsPage = require("../../po/pages/settings_workspace.page");
+const pages = require("../../po/pagefactory");
 
 describe("Workspace management", () => {
   before("Edit Workspace", async () => {
-    await LoginPage.login();
-    await BoardsPage.btnSettings.click();
-    await SettingsPage.btnWorkspaceVisibility.click();
-    await SettingsPage.publicOption.moveTo();
-    await SettingsPage.publicOption.click();
-    await SettingsPage.btnClosePopover.click();
+    await pages.login.login();
+    await pages.boards.btnSettings.click();
+    await pages.settingsWorkspace.btnWorkspaceVisibility.click();
+    await pages.settingsWorkspace.publicOption.moveTo();
+    await pages.settingsWorkspace.publicOption.click();
+    await pages.settingsWorkspace.btnClosePopover.click();
     await browser.pause(2000);
   });
   it("I can see 'public' appeared in workspace visibility", async () => {
-    const visibility = await SettingsPage.visibility.getText();
+    const visibility = await pages.settingsWorkspace.visibility.getText();
 
     assert.match(
       visibility,
@@ -22,9 +20,9 @@ describe("Workspace management", () => {
     );
   });
   after("visibility back to private", async () => {
-    await SettingsPage.btnWorkspaceVisibility.click();
-    await SettingsPage.privateOption.moveTo();
-    await SettingsPage.privateOption.click();
-    await SettingsPage.btnClosePopover.click();
+    await pages.settingsWorkspace.btnWorkspaceVisibility.click();
+    await pages.settingsWorkspace.privateOption.moveTo();
+    await pages.settingsWorkspace.privateOption.click();
+    await pages.settingsWorkspace.btnClosePopover.click();
   });
 });

@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 module.exports = class CardComponent {
   get btnAddCard() {
     return $('button[data-testid="list-add-card-button"]');

@@ -1,4 +1,3 @@
-const { $ } = require("@wdio/globals");
 const Page = require("./page");
 const LoginModal = require("./../components/login/LoginModalComponent");
 
@@ -8,7 +7,7 @@ class LoginPage extends Page {
     this.loginModal = new LoginModal();
   }
   open() {
-    return super.open("home");
+    return super.open("/home");
   }
 
   get btnLogin() {

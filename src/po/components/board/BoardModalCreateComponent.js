@@ -1,5 +1,3 @@
-import { $ } from "@wdio/globals";
-
 module.exports = class BoardModalCreateComponent {
   get boardTitle() {
     return $('input[data-testid="create-board-title-input"]');
