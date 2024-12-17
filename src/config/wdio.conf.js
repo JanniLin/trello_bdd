@@ -1,3 +1,4 @@
+
 exports.config = {
   runner: "local",
   baseUrl: "https://trello.com",
@@ -17,19 +18,19 @@ exports.config = {
   maxInstances: 2,
 
   capabilities: [
-    {
-      maxInstances: 2,
-      browserName: "chrome",
-      "goog:chromeOptions": {
-        args: [
-          // "--headless",
-          "--start-maximized",
-          "--disable-gpu",
-          "--disable-dev-shm-usage",
-        ],
-      },
-      acceptInsecureCerts: true,
-    },
+    // {
+    //   maxInstances: 2,
+    //   browserName: "chrome",
+    //   "goog:chromeOptions": {
+    //     args: [
+    //       // "--headless",
+    //       "--start-maximized",
+    //       "--disable-gpu",
+    //       "--disable-dev-shm-usage",
+    //     ],
+    //   },
+    //   acceptInsecureCerts: true,
+    // },
     {
       maxInstances: 2,
       browserName: "firefox",
@@ -39,6 +40,11 @@ exports.config = {
       acceptInsecureCerts: true,
     },
   ],
+
+  reporters: ['spec',
+
+  ],
+
 
   logLevel: "warn",
 
