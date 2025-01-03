@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "wdio run src/config/wdio.conf.js",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test:api": "newman run src/po/API/Trello.postman_collection.json --environment src/po/API/Trello.postman_environment.json"
   },
   "description": "",
   "devDependencies": {
@@ -13,7 +14,8 @@
     "@wdio/spec-reporter": "^9.4.2",
     "@wdio/visual-service": "^6.2.2",
     "prettier": "^3.3.3",
-    "wdio-geckodriver-service": "^5.0.2"
+    "wdio-geckodriver-service": "^5.0.2",
+    "newman": "^6.2.1"
   },
   "dependencies": {
     "@wdio/globals": "^9.2.14",

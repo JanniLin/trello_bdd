@@ -1,4 +1,3 @@
-
 exports.config = {
   runner: "local",
   baseUrl: "https://trello.com",
@@ -41,10 +40,7 @@ exports.config = {
     },
   ],
 
-  reporters: ['spec',
-
-  ],
-
+  //reporters: ["spec"],
 
   logLevel: "warn",
 
