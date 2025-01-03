@@ -40,7 +40,7 @@ exports.config = {
     },
   ],
 
-  //reporters: ["spec"],
+  reporters: ["spec"],
 
   logLevel: "warn",
 
