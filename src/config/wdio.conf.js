@@ -1,4 +1,3 @@
-
 exports.config = {
   runner: "local",
   baseUrl: "https://trello.com",
@@ -18,19 +17,19 @@ exports.config = {
   maxInstances: 2,
 
   capabilities: [
-    // {
-    //   maxInstances: 2,
-    //   browserName: "chrome",
-    //   "goog:chromeOptions": {
-    //     args: [
-    //       // "--headless",
-    //       "--start-maximized",
-    //       "--disable-gpu",
-    //       "--disable-dev-shm-usage",
-    //     ],
-    //   },
-    //   acceptInsecureCerts: true,
-    // },
+    {
+      maxInstances: 2,
+      browserName: "chrome",
+      "goog:chromeOptions": {
+        args: [
+          // "--headless",
+          "--start-maximized",
+          "--disable-gpu",
+          "--disable-dev-shm-usage",
+        ],
+      },
+      acceptInsecureCerts: true,
+    },
     {
       maxInstances: 2,
       browserName: "firefox",
@@ -42,7 +41,15 @@ exports.config = {
   ],
 
   reporters: [
-    "spec"
+    "spec",
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+      },
+    ],
   ],
 
   logLevel: "warn",
@@ -57,14 +64,15 @@ exports.config = {
 
   framework: "mocha",
 
-  mochaOpts: {
-    ui: "bdd",
-    timeout: 60000,
-  },
   before: async () => {
     const chai = await import("chai");
     global.expect = chai.expect;
     global.assert = chai.assert;
     chai.should();
+  },
+
+  mochaOpts: {
+    ui: "bdd",
+    timeout: 60000,
   },
 };

@@ -7,6 +7,7 @@ describe("Cards management", () => {
     const boardItem = await pages.boards.boardFromList("new");
     await boardItem.click();
     await pages.boardInner.list.btnAddList.click();
+    await pages.boardInner.list.addListTitle.clearValue();
     await pages.boardInner.list.addListTitle.setValue("new list");
     await pages.boardInner.list.btnSubmitAddList.click();
     await pages.boardInner.list.btnCancelListCreation.click();
