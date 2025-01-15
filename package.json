@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "wdio run src/config/wdio.conf.js",
+    "test:api": "newman run src/po/API/Trello.postman_collection.json --environment src/po/API/Trello.postman_environment.json",
     "format": "prettier --write .",
-    "test:api": "newman run src/po/API/Trello.postman_collection.json --environment src/po/API/Trello.postman_environment.json"
+    "lint": "npx eslint --config src/config/eslint.config.js ."
   },
   "description": "",
   "devDependencies": {
@@ -15,6 +16,8 @@
     "@wdio/spec-reporter": "^9.4.2",
     "@wdio/visual-service": "^6.2.2",
     "allure-commandline": "^2.32.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
     "newman": "^6.2.1",
     "prettier": "^3.3.3",
     "wdio-geckodriver-service": "^5.0.2"

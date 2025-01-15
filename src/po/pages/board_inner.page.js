@@ -1,4 +1,4 @@
-import Page from "./page";
+const Page = require("./page");
 const SideMenu = require("./../components/board/SideMenuBoardComponent");
 const List = require("./../components/list/ListComponent");
 const Card = require("./../components/card/CardComponent");
