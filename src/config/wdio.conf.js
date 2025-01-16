@@ -12,7 +12,7 @@ exports.config = {
     //"./../test/specs/workspace_edit.test.js",
   ],
 
-  specFileRetries: 2,
+  specFileRetries: 3,
 
   maxInstances: 2,
 
