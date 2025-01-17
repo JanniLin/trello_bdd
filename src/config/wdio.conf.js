@@ -2,17 +2,18 @@ exports.config = {
   runner: "local",
   baseUrl: "https://trello.com",
 
-  specs: [
-    "./../test/specs/**/*.test.js",
+  specs: ["./../test/features/**/*.feature"],
+  // specs: [
+  //"./../test/specs/**/*.test.js",
 
-    //"./../test/specs/login.test.js",
-    //"./../test/specs/boards.test.js",
-    //"./../test/specs/list_cards.test.js",
-    //"./../test/specs/user_profile_edit.test.js",
-    //"./../test/specs/workspace_edit.test.js",
-  ],
+  //"./../test/specs/login.test.js",
+  //"./../test/specs/boards.test.js",
+  //"./../test/specs/list_cards.test.js",
+  //"./../test/specs/user_profile_edit.test.js",
+  //"./../test/specs/workspace_edit.test.js",
+  //],
 
-  specFileRetries: 3,
+  specFileRetries: 2,
 
   maxInstances: 2,
 
@@ -62,17 +63,21 @@ exports.config = {
 
   connectionRetryCount: 3,
 
-  framework: "mocha",
+  framework: "cucumber",
+  // framework: "mocha",
 
+  cucumberOpts: {
+    require: ["./src/test/step-definitions/**/*.steps.js"],
+    timeout: 60000,
+  },
+  // mochaOpts: {
+  //   ui: "bdd",
+  //   timeout: 60000,
+  // },
   before: async () => {
-    const chai = await import("chai");
+    const chai = await require("chai");
     global.expect = chai.expect;
     global.assert = chai.assert;
     chai.should();
-  },
-
-  mochaOpts: {
-    ui: "bdd",
-    timeout: 60000,
   },
 };

@@ -1,5 +1,6 @@
 Feature: Workspace management
 
+  @visibility_private
   Scenario: Edit Workspace
 
     Given I login with valid credentials

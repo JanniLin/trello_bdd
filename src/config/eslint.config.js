@@ -5,13 +5,13 @@ module.exports = [
     languageOptions: {
       globals: {
         ...globals.browser,
-        describe: 'readonly',
-        it: 'readonly',
-        before: 'readonly',
-        after: 'readonly',
-        require: 'readonly',
+        describe: "readonly",
+        it: "readonly",
+        before: "readonly",
+        after: "readonly",
+        require: "readonly",
       },
     },
-    files: ['**/*.js'],
+    files: ["**/*.js"],
   },
 ];

@@ -9,7 +9,7 @@ describe("Boards management ", () => {
   });
   it("I can see title <new> in the list of boards", async () => {
     const boardItem = await pages.boardInner.itemFromList("new").getText();
-
+    console.log(`boardItem --> ${boardItem}`);
     assert.equal(boardItem, "new", "The board title should be 'new'");
   });
 

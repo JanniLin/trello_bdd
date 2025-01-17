@@ -1,5 +1,6 @@
 Feature: User profile management
 
+  @change_username
   Scenario: Edit user profile
 
     Given I login with valid credentials

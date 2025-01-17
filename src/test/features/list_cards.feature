@@ -1,10 +1,9 @@
 Feature: Lists/cards management
 
-  Background:
-    Given I login with valid credentials
 
   Scenario: Create a list
 
+    Given I login with valid credentials
     When I click on 'new' board title
     And I click 'add another list'
     And I insert 'new list' title
@@ -14,18 +13,23 @@ Feature: Lists/cards management
 
   Scenario: Create a card
 
+    Given I open boards page
+    When I click on 'new' board title
     When I click 'add a card' button
-    And I insert 'new card' in the title form
+    When  I insert new card in the title form
     And I click 'add card' button
     But I click 'close' button for creating new card
     Then I can see 'new card' card in the 'new list'
 
+  @delete_list
   Scenario: Card filtering
 
-    When I click 'add a card' button
-    And I insert 'second one' in the title form
+    Given I open boards page
+    When I click on 'new' board title
+    And I click 'add a card' button
+    And I insert second one in the title form
     And I click 'add card' button
     But I click 'close' button for creating new card
     And I click 'filter cards' icon
-    And I enter 'new card' into keyword input
+    And I enter 'second one' into keyword input
     Then I can see number of founded cards

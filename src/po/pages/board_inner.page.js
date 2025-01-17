@@ -12,7 +12,7 @@ class Board_innerPage extends Page {
   }
 
   itemFromList(ttl) {
-    return $(`a[title="${ttl} (currently active)"]`);
+    return $(`a[aria-label="${ttl} (currently active)"]`);
   }
 
   get pageTitle() {
