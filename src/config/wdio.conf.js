@@ -69,6 +69,8 @@ exports.config = {
   cucumberOpts: {
     require: ["./src/test/step-definitions/**/*.steps.js"],
     timeout: 60000,
+    tags: '',
+      //'@Boards_management or @Lists/cards_management or @Login_functionality or @User_profile_management or @Workspace_management'
   },
   // mochaOpts: {
   //   ui: "bdd",

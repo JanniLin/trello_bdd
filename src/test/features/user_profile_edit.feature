@@ -1,3 +1,4 @@
+@User_profile_management
 Feature: User profile management
 
   @change_username

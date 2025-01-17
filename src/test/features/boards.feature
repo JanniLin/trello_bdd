@@ -1,3 +1,4 @@
+@Boards_management
 Feature: Boards management
 
   Scenario: Create a board
@@ -9,7 +10,7 @@ Feature: Boards management
     Then I can see title 'new' in the list of boards
 
 
-  @board
+  @board_delete
   Scenario: Search for a board
 
     Given I open search page

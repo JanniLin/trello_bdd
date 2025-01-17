@@ -1,3 +1,4 @@
+@Lists/cards_management
 Feature: Lists/cards management
 
 

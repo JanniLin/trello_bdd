@@ -29,7 +29,7 @@ Then("I can see the title of the board 'new'", async () => {
 
   await title.should.be.a("string").and.equal("new");
 });
-After("@board", async () => {
+After("@board_delete", async () => {
   console.log("Cleaning up after scenario...");
   await pages.boardInner.deleteBoard("new");
 });

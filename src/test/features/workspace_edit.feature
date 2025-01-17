@@ -1,3 +1,4 @@
+@Workspace_management
 Feature: Workspace management
 
   @visibility_private

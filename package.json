@@ -4,6 +4,14 @@
   "scripts": {
     "test": "wdio run src/config/wdio.conf.js",
     "test:api": "newman run src/po/API/Trello.postman_collection.json --environment src/po/API/Trello.postman_environment.json",
+
+    "test:boards": "wdio run src/config/wdio.conf.js --cucumberOpts.tags '@Boards_management'",
+    "test:list/cards": "wdio run src/config/wdio.conf.js --cucumberOpts.tags '@Lists/cards_management'",
+    "test:login": "wdio run src/config/wdio.conf.js --cucumberOpts.tags '@Login_functionality'",
+    "test:profile": "wdio run src/config/wdio.conf.js --cucumberOpts.tags '@User_profile_management'",
+    "test:workspace": "wdio run src/config/wdio.conf.js --cucumberOpts.tags '@Workspace_management'",
+
+
     "format": "prettier --write .",
     "lint": "npx eslint --config src/config/eslint.config.js ."
   },
