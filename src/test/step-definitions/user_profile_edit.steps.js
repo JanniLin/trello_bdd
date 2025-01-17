@@ -20,7 +20,7 @@ When("I click save button", async () => {
 Then("I see page url is changed", async () => {
   const url = await browser.getUrl();
 
-  url.should.be.a("string").and.equal("https://trello.com/u/yana_rusakova");
+ await url.should.be.a("string").and.equal("https://trello.com/u/yana_rusakova");
 });
 
 After("@change_username", async () => {

@@ -27,5 +27,5 @@ When(/^I click (continue|submit) button$/, async (button) => {
 Then("logo 'Trello' is displayed", async () => {
   const logo = await pages.boards.logo.isDisplayed();
 
-  expect(logo).to.be.true;
+ await expect(logo).to.be.true;
 });
