@@ -22,7 +22,7 @@ Then("I can see title 'board' in the list of boards", async () => {
   //
   //  const boardItem = await pages.boardInner.itemFromList("board").getText();
   //  console.log(` boardItem --> ${boardItem}`);
-  //
+
   //  assert.equal(boardItem, "board", "The board title should be 'board'");
 });
 
