@@ -3,6 +3,7 @@ exports.config = {
   baseUrl: "https://trello.com",
 
   specs: ["./../test/features/**/*.feature"],
+
   // specs: [
   //"./../test/specs/**/*.test.js",
 
