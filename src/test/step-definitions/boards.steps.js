@@ -12,18 +12,13 @@ When("I click 'create' button", async () => {
 });
 Then("I can see title 'board' in the list of boards", async () => {
   await pages.boardInner.list.btnCancelListCreation.click();
-  // const boardItemEl = await pages.boardInner.itemFromList("board");
-  //
-  // await boardItemEl.waitForExist({ timeout: 5000 });
-  // await boardItemEl.waitForDisplayed({ timeout: 5000 });
-  //
-  // console.log(` boardItem exist -->${await pages.boardInner.itemFromList("board").isExisting()}`);
-  // console.log(` boardItem displayed -->${await pages.boardInner.itemFromList("board").isDisplayed()}`);
-  //
-  //  const boardItem = await pages.boardInner.itemFromList("board").getText();
-  //  console.log(` boardItem --> ${boardItem}`);
+  await browser.refresh();
+  await browser.pause(2000);
 
-  //  assert.equal(boardItem, "board", "The board title should be 'board'");
+
+   const boardItem = await pages.boardInner.itemFromList("board").getText();
+
+   assert.equal(boardItem, "board", "The board title should be 'board'");
 });
 
 When("I insert 'board' board title", async () => {
