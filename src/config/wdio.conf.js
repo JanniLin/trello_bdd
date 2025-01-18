@@ -37,7 +37,7 @@ exports.config = {
       browserName: "firefox",
       "moz:firefoxOptions": {
         args: [
-         // "--headless"
+          "--headless"
         ],
       },
       acceptInsecureCerts: true,
