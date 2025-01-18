@@ -5,15 +5,15 @@ Feature: Boards management
 
     Given I login with valid credentials
     When I click on the 'create new board' area
-    And I insert board title 'new'
+    And I insert board title 'board'
     And I click 'create' button
-    Then I can see title 'new' in the list of boards
+    Then I can see title 'board' in the list of boards
 
 
   @board_delete
   Scenario: Search for a board
 
     Given I open search page
-    When I insert 'new' board title
-    And I click found board 'new'
-    Then I can see the title of the board 'new'
+    When I insert 'board' board title
+    And I click found board 'board'
+    Then I can see the title of the board 'board'

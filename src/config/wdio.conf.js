@@ -36,7 +36,9 @@ exports.config = {
       maxInstances: 2,
       browserName: "firefox",
       "moz:firefoxOptions": {
-        args: ["--headless"],
+        args: [
+          //"--headless"
+        ],
       },
       acceptInsecureCerts: true,
     },
@@ -70,7 +72,7 @@ exports.config = {
   cucumberOpts: {
     require: ["./src/test/step-definitions/**/*.steps.js"],
     timeout: 60000,
-    tags: '',
+    tags: "",
   },
   // mochaOpts: {
   //   ui: "bdd",

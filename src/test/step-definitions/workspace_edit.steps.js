@@ -17,7 +17,7 @@ When("I click 'close popover' button", async () => {
 Then("I can see 'public' appeared in workspace visibility", async () => {
   const visibility = await pages.settingsWorkspace.visibility.getText();
 
- await assert.match(
+  await assert.match(
     visibility,
     /(Public|Публичная)/i,
     "The visibility should be set to 'Public'",

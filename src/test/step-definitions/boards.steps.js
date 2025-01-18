@@ -4,32 +4,35 @@ const pages = require("../../po/pagefactory");
 When("I click on the 'create new board' area", async () => {
   await pages.boards.boardModal.createBoard.click();
 });
-When("I insert board title 'new'", async () => {
-  await pages.boards.boardModal.boardTitle.setValue("new");
+When("I insert board title 'board'", async () => {
+  await pages.boards.boardModal.boardTitle.setValue("board");
 });
 When("I click 'create' button", async () => {
   await pages.boards.boardModal.btnSubmit.click();
 });
-Then("I can see title 'new' in the list of boards", async () => {
+Then("I can see title 'board' in the list of boards", async () => {
   await pages.boardInner.list.btnCancelListCreation.click();
-  // const boardItem = await pages.boardInner.itemFromList("new").getText()
-  //
-  // console.log(`boardItem --> ${boardItem}`)
-  // await assert.equal(boardItem, "new", "The board title should be 'new'")
+  console.log(` boardItem exist -->${await pages.boardInner.itemFromList("board").isExisting()}`);
+  console.log(` boardItem displayed -->${await pages.boardInner.itemFromList("board").isDisplayed()}`);
+
+  const boardItem = await pages.boardInner.itemFromList("board").getText();
+  console.log(` boardItem --> ${boardItem}`);
+
+  assert.equal(boardItem, "board", "The board title should be 'news'");
 });
 
-When("I insert 'new' board title", async () => {
-  await pages.search.boardSearch.searchInput.setValue("new");
+When("I insert 'board' board title", async () => {
+  await pages.search.boardSearch.searchInput.setValue("board");
 });
-When("I click found board 'new'", async () => {
+When("I click found board 'board'", async () => {
   await pages.search.boardSearch.boardFromList.click();
 });
-Then("I can see the title of the board 'new'", async () => {
+Then("I can see the title of the board 'board'", async () => {
   const title = await pages.boardInner.pageTitle.getText();
 
-  await title.should.be.a("string").and.equal("new");
+  await title.should.be.a("string").and.equal("board");
 });
 After("@board_delete", async () => {
   console.log("Cleaning up after scenario...");
-  await pages.boardInner.deleteBoard("new");
+  await pages.boardInner.deleteBoard("board");
 });

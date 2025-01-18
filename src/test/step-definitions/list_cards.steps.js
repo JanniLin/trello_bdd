@@ -22,7 +22,7 @@ When("I click 'close' button for creating new list", async () => {
 Then("I can see 'new list' on the 'new' board page", async () => {
   const list = await pages.boardInner.list.listTitle.getText();
 
- await expect(list).to.be.a("string").and.to.equal("new list");
+  await expect(list).to.be.a("string").and.to.equal("new list");
 });
 
 When("I click 'add a card' button", async () => {
@@ -45,7 +45,7 @@ When("I click 'close' button for creating new card", async () => {
 When("I can see 'new card' card in the 'new list'", async () => {
   const card = await pages.boardInner.card.card.getText();
 
- await card.should.be.a("string").and.equal("new card");
+  await card.should.be.a("string").and.equal("new card");
 });
 
 When("I click 'filter cards' icon", async () => {
@@ -57,7 +57,7 @@ When("I enter 'second one' into keyword input", async () => {
 Then("I can see number of founded cards", async () => {
   const count = await pages.boardInner.filterCount.getText();
 
- await assert.equal(count, "1", "The number of found cards should be '1'");
+  await assert.equal(count, "1", "The number of found cards should be '1'");
 });
 
 After("@delete_list", async () => {
