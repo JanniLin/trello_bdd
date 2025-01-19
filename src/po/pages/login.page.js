@@ -1,5 +1,7 @@
 const Page = require("./page");
 const LoginModal = require("./../components/login/LoginModalComponent");
+const {config} = require('dotenv')
+config()
 
 class LoginPage extends Page {
   constructor() {
@@ -15,11 +17,12 @@ class LoginPage extends Page {
   }
 
   async login() {
+
     await this.open();
     await this.btnLogin.click();
-    await this.loginModal.userName.setValue("yana.rusakova.epam@gmail.com");
+    await this.loginModal.userName.setValue(process.env.TRELLO_USERNAME);
     await this.loginModal.btnSubmit.click();
-    await this.loginModal.password.setValue("passworD123");
+    await this.loginModal.password.setValue(process.env.TRELLO_PASSWORD);
     await this.loginModal.btnSubmit.click();
   }
 }

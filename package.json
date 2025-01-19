@@ -26,12 +26,11 @@
     "globals": "^15.14.0",
     "newman": "^6.2.1",
     "prettier": "^3.3.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3",
     "wdio-geckodriver-service": "^5.0.2"
   },
   "dependencies": {
     "@wdio/globals": "^9.2.14",
-    "chai": "^5.1.2"
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
   }
 }

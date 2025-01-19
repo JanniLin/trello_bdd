@@ -1,5 +1,7 @@
+const {config} = require('dotenv')
 const { Given, When, Then } = require("@wdio/cucumber-framework");
 const pages = require("../../po/pagefactory");
+config()
 
 Given("I am on the login page", async () => {
   await pages.login.open();
@@ -11,10 +13,8 @@ When("I click the login button", async () => {
 
 When(/^I insert (email|password)$/, async (credentialType) => {
   credentialType === "email"
-    ? await pages.login.loginModal.userName.setValue(
-        "yana.rusakova.epam@gmail.com",
-      )
-    : await pages.login.loginModal.password.setValue("passworD123");
+    ? await pages.login.loginModal.userName.setValue(process.env.TRELLO_USERNAME)
+    : await pages.login.loginModal.password.setValue(process.env.TRELLO_PASSWORD);
 });
 
 When(/^I click (continue|submit) button$/, async (button) => {
